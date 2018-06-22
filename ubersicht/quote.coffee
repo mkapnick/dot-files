@@ -3,11 +3,12 @@ command: 'curl -s "http://feeds.feedburner.com/brainyquote/QUOTEBR"'
 refreshFrequency: 30000
 
 style: """
-  bottom: 0px
-  left: 0px
+  bottom: 7px
+  left: 30px
   -webkit-font-smoothing: antialiased
-  color: #d8d8d8
-  font: 11px Iosevka Term
+  color: #fff
+  font: 12px Iosevka Term
+  font-weight: 500;
 
   .output
     padding: 5px 10px

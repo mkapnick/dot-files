@@ -7,11 +7,10 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #d8d8d8
-  font: 11px Iosevka Term
-  left: 1135px
-  bottom: 8px
-  span
-    color: #d8d8d8
+  color: #ffffff
+  font: 12px Iosevka Term
+  font-weight: 500;
+  right: 105px
+  bottom: 12px
 
 """

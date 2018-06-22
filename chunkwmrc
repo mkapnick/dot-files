@@ -5,8 +5,8 @@ chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 chunkc core::hotload 1
 chunkc core::log_file stdout
 
-chunkc set global_desktop_offset_top     25
-chunkc set global_desktop_offset_bottom  35
+chunkc set global_desktop_offset_top     5
+chunkc set global_desktop_offset_bottom  45
 chunkc set global_desktop_offset_left    25
 chunkc set global_desktop_offset_right   25
 chunkc set global_desktop_offset_gap     20

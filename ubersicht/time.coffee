@@ -7,15 +7,16 @@ render: -> """
 """
 
 style: """
-  -webkit-font-smoothing: antialiased
-  text-align: center
-  color: #d8d8d8
-  font: 11px Iosevka Term
-  overflow: hidden
-  text-overflow: ellipsis
   width: 50%
   left: 25%
-  bottom: 8px
+  bottom: 12px
+  -webkit-font-smoothing: antialiased
+  text-align: center
+  color: #ffffff
+  font: 12px Iosevka Term
+  font-weight: 500;
+  overflow: hidden
+  text-overflow: ellipsis
 """
 
 # Update function.
@@ -28,6 +29,9 @@ update: (output, domEl) ->
 
   if hour > 12
     hour = hour - 12
+
+  if minutes < 10
+    minutes = 0 + "" + minutes
 
   time = hour + ':' + minutes
 
