@@ -1,0 +1,149 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+
+if has('python3')
+  silent! python3 1
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'marijnh/tern_for_vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'elzr/vim-json'
+Plug 'dyng/ctrlsf.vim'
+Plug 'fatih/vim-go'
+" Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'digitaltoad/vim-pug'
+Plug 'tpope/vim-sleuth'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-surround'
+Plug 'flazz/vim-colorschemes'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'junegunn/goyo.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'machakann/vim-swap'
+Plug 'ervandew/supertab'
+Plug 'leafgarland/typescript-vim'
+call plug#end()
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'benmills/vimux'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'w0rp/ale'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+call vundle#end()
+
+set clipboard=unnamed
+set colorcolumn=80
+set wildmenu
+set hlsearch
+set lazyredraw
+
+set backspace=2   " Backspace deletes like most programs in insert mode
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set history=50
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+set autowrite     " Automatically :write before running commands
+
+set t_Co=256
+colorscheme last256
+
+syntax on
+filetype plugin indent on
+set tabstop=4 shiftwidth=4 expandtab
+let g:syntastic_javascript_checkers = ['eslint']
+let g:jsx_ext_required = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:vim_json_syntax_conceal = 0
+
+" startify
+
+"supertab
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabClosePreviewOnPopupClose = 1
+set completeopt=menu,longest    " Use the popup menu by default; only insert the longest common text of the completion matches; don't automatically show extra information in the preview window.
+
+autocmd BufNewFile,BufRead *.jade set syntax=pug
+autocmd BufNewFile,BufRead *.es6 set filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.phtml set filetype=html
+" autocmd BufNewFile,BufWritePre,BufRead * :Goyo
+autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
+autocmd BufWritePre *.go :GoBuild
+
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+
+let g:ale_linters = {'jsx': ['eslint']}
+let g:ale_fix_on_save = 1
+
+let g:golang_goroot = "/Users/michael/go"
+:imap jk <Esc>
+
+set cursorline
+hi CursorLine cterm=NONE ctermbg=black
+hi CursorColumn cterm=NONE ctermbg=black
+
+let mapleader = ","
+map <C-F> :CtrlSF<Space>
+map <Leader>c :Commentary<CR>
+map <Leader>. :bnext<CR>
+map <Leader>m :bprev<CR>
+map <Leader>vp :VimuxPromptCommand<CR>
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)"
+
+" hi MatchParen cterm=bold ctermbg=none ctermfg=white
+set timeout
+set timeoutlen=750
+set ttimeoutlen=250
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" map fzf Buffer to semi colon
+nmap ; :Buffers<CR>
+nmap . :Files<CR>
+
+" Goyo writing mode
+function! ProseMode()
+  call goyo#execute(0, [])
+  set spell noci nosi noai nolist noshowmode noshowcmd
+  set complete+=s
+endfunction
+
+command! ProseMode call ProseMode()
+nmap \p :ProseMode<CR>
+
+" syntax off
