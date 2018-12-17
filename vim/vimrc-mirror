@@ -39,6 +39,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'benmills/vimux'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'Valloric/YouCompleteMe', {'do': 'python2 ./install.py'}
 Plugin 'w0rp/ale'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'haya14busa/incsearch.vim'
