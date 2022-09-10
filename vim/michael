@@ -1,0 +1,232 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+
+if has('python3')
+  silent! python3 1
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'marijnh/tern_for_vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'elzr/vim-json'
+Plug 'dyng/ctrlsf.vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'digitaltoad/vim-pug'
+Plug 'tpope/vim-sleuth'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-surround'
+Plug 'keith/swift.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'junegunn/goyo.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'machakann/vim-swap'
+Plug 'leafgarland/typescript-vim'
+Plug 'mcchrish/nnn.vim'
+call plug#end()
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'benmills/vimux'
+Plugin 'tpope/vim-abolish'
+" Plugin 'heavenshell/vim-jsdoc'
+Plugin 'w0rp/ale'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe', {'do': 'python2 ./install.py'}
+Plugin 'tpope/vim-rhubarb'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'godlygeek/tabular'
+" Plugin 'plasticboy/vim-markdown'
+call vundle#end()
+
+set clipboard=unnamed
+set colorcolumn=80
+set wildmenu
+set hlsearch
+set lazyredraw
+
+set backspace=2   " Backspace deletes like most programs in insert mode
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set history=50
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+set autowrite     " Automatically :write before running commands
+set noexpandtab
+set tabstop=2
+set shiftwidth=2
+
+set t_Co=256
+colorscheme last256
+
+syntax on
+filetype plugin indent on
+let g:syntastic_javascript_checkers = ['eslint']
+let g:jsx_ext_required = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:vim_json_syntax_conceal = 0
+let g:ycm_log_level = 'debug'
+let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
+
+autocmd BufNewFile,BufRead *.jade set syntax=pug
+autocmd BufNewFile,BufRead *.es6 set filetype=javascript.jsx
+au BufNewFile,BufRead *.tsx set filetype=typescript
+au BufNewFile,BufRead *.ts set filetype=typescript
+autocmd BufNewFile,BufRead *.phtml set filetype=html
+" autocmd BufNewFile,BufWritePre,BufRead * :Goyo
+autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
+autocmd BufWritePre *.go :GoBuild
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+    au BufNewFile,BufRead *.tsx set filetype=typescript.jsx
+augroup END
+
+" ale
+let g:ale_linters = {'jsx': ['eslint'], 'swift': ['swiftpm']}
+let g:ale_fix_on_save = 1
+
+"go YCM
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+" let g:ycm_gocode_binary_path = "$GOPATH/bin/gocode"
+" let g:ycm_godef_binary_path = "$GOPATH/bin/"
+
+let g:golang_goroot = "/Users/michael/go"
+:imap jk <Esc>
+
+set cursorline
+hi CursorLine cterm=NONE ctermbg=black
+hi CursorColumn cterm=NONE ctermbg=black
+
+let mapleader = ","
+
+map <C-F> :CtrlSF<Space>
+map <Leader>c :Commentary<CR>
+map <Leader>. :bnext<CR>
+map <Leader>m :bprev<CR>
+map <Leader>vp :VimuxPromptCommand<CR>
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)"
+
+" hi MatchParen cterm=bold ctermbg=none ctermfg=white
+set timeout
+set timeoutlen=750
+set ttimeoutlen=250
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" map fzf Buffer to semi colon
+nmap ; :Buffers<CR>
+nmap . :Files<CR>
+nmap , :Ag<CR>
+nmap ' :Nnn<CR>
+
+" map <leader>c to :Goyo
+nmap <Leader>c :Goyo<CR>
+
+" map Goyo to
+" nmap ? :Np<CR>
+
+" Goyo writing mode
+function! ProseMode()
+  call goyo#execute(0, [])
+  set spell noci nosi noai nolist noshowmode noshowcmd
+  set complete+=s
+endfunction
+
+" https://stackoverflow.com/questions/4946421/vim-moving-with-hjkl-in-long-lines-screen-lines
+function! ScreenMovement(movement)
+   if &wrap
+      return "g" . a:movement
+   else
+      return a:movement
+   endif
+endfunction
+onoremap <silent> <expr> j ScreenMovement("j")
+onoremap <silent> <expr> k ScreenMovement("k")
+onoremap <silent> <expr> 0 ScreenMovement("0")
+onoremap <silent> <expr> ^ ScreenMovement("^")
+onoremap <silent> <expr> $ ScreenMovement("$")
+nnoremap <silent> <expr> j ScreenMovement("j")
+nnoremap <silent> <expr> k ScreenMovement("k")
+nnoremap <silent> <expr> 0 ScreenMovement("0")
+nnoremap <silent> <expr> ^ ScreenMovement("^")
+nnoremap <silent> <expr> $ ScreenMovement("$")
+
+" set autochdir
+set tags=.tags,./tags,tags;
+
+function! SNote(...)
+  let path = strftime("%Y%m%d%H%M")." ".trim(join(a:000)).".md"
+  execute ":sp " . fnameescape(path)
+endfunction
+command! -nargs=* SNote call SNote(<f-args>)
+
+function! Note(...)
+  let path = strftime("%Y%m%d%H%M")." ".trim(join(a:000)).".md"
+  execute ":e " . fnameescape(path)
+endfunction
+command! -nargs=* Note call Note(<f-args>)
+
+function! ZettelkastenSetup()
+  if expand("%:t") !~ '^[0-9]\+'
+    return
+  endif
+  " syn region mkdFootnotes matchgroup=mkdDelimiter start="\[\["    end="\]\]"
+
+  inoremap <expr> <plug>(fzf-complete-path-custom) fzf#vim#complete#path("rg --files -t md \| sed 's/^/[[/g' \| sed 's/$/]]/'")
+  imap <buffer> [[ <plug>(fzf-complete-path-custom)
+
+  function! s:CompleteTagsReducer(lines)
+    if len(a:lines) == 1
+      return "#" . a:lines[0]
+    else
+      return split(a:lines[1], '\t ')[1]
+    end
+  endfunction
+
+  inoremap <expr> <plug>(fzf-complete-tags) fzf#vim#complete(fzf#wrap({
+        \ 'source': 'zkt-raw',
+        \ 'options': '--multi --ansi --nth 2 --print-query --exact --header "Enter without a selection creates new tag"',
+        \ 'reducer': function('<sid>CompleteTagsReducer')
+        \ }))
+  imap <buffer> # <plug>(fzf-complete-tags)
+endfunction
+
+command! ProseMode call ProseMode()
+nmap \p :ProseMode<CR>
+
+" syntax off
