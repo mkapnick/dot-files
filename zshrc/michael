@@ -1,0 +1,372 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/michael/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/michael/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="tonotdo"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+ COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# source kube
+#source $HOME/dev/kube-ps1/kube-ps1.sh
+#PROMPT='$(kube_ps1)'$PROMPT
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Customize to your needs...
+__fsel() {
+  # set -o nonomatch
+  # command git rev-parse --show-cdup > /dev/null || exit
+  command ag '^' -l $(git rev-parse --show-cdup) | fzf
+}
+
+__gdsel() {
+  set -e
+  set -o nonomatch
+  command git rev-parse --show-cdup > /dev/null || exit
+  command git diff --name-only | fzf
+}
+
+file-widget() {
+  if [[ "$LBUFFER" != "" ]]; then
+      LBUFFER="$LBUFFER $(__fsel)"
+  else
+      LBUFFER="vim $(__fsel)"
+  fi
+
+  zle redisplay
+}
+
+changed-file-widget() {
+  LBUFFER="${LBUFFER}$(__gdsel)"
+  zle redisplay
+}
+
+zle -N file-widget
+zle -N changed-file-widget
+bindkey '^P' file-widget
+bindkey '^O' changed-file-widget
+
+# ALT-C - cd into the selected directory
+fzf-cd-widget() {
+  cd "${$(command find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+    -o -type d -print 2> /dev/null | sed 1d | cut -b3- | fzf +m):-.}"
+  zle reset-prompt
+}
+zle     -N    fzf-cd-widget
+bindkey '\ec' fzf-cd-widget
+
+# CTRL-R - Paste the selected command from history into the command line
+fzf-history-widget() {
+  local selected
+  if selected=$(fc -l 1 | fzf +s --tac +m -n2..,.. --toggle-sort=ctrl-r -q "$LBUFFER"); then
+    num=$(echo "$selected" | head -1 | awk '{print $1}' | sed 's/[^0-9]//g')
+    LBUFFER=!$num
+    zle expand-history
+  fi
+  zle redisplay
+}
+zle     -N   fzf-history-widget
+bindkey '^R' fzf-history-widget
+
+alias tig="tig --all"
+alias tigi="tig"
+alias gco="git checkout"
+alias gst="git status"
+alias gc="git commit -m"
+alias ga="git add"
+alias gc!="git commit --amend"
+alias gd="git diff"
+alias gp="git pull --rebase"
+alias gpo="git push origin HEAD;"
+alias gpull="git pull origin"
+alias gfetch="git fetch origin"
+alias gchb="git checkout -b"
+alias gch="git checkout"
+alias gbr="git branch"
+alias ga="git add"
+# alias vim="mvim -v"
+alias gp="git pull";
+alias tmux="tmux -2"; # This fixes color scheme in tmux
+alias i="screenfetch"
+alias weatheri="weather -l 10016"
+alias m="~/go/src/github.com/mirrorfitness/core-services"
+alias ma="~/dev/mirroradmin-be-flask"
+alias mm="~/go/src/github.com/mirrorfitness/mirroradmin-services"
+alias me="~/dev/ecommerce"
+alias cat="bat"
+alias top="htop"
+alias htop="glances"
+#alias find="fd"
+# alias python to python3
+alias python="python3"
+
+# kub/gcloud aliases
+#alias kubectl-dev='kubectl --namespace=dev'
+#alias kubectl-stag='kubectl --namespace=staging'
+
+# nnn alias
+alias f="nnn"
+alias nvim="vim"
+
+# Set CDPATH
+cdpath=(~/go ~/go/src ~/go/src/github.com ~/go/src/github.com/ldelossa ~/go/mirror ~/go/src/github.com/mirrorfitness)
+
+export TERM=screen-256color
+export NVM_DIR="/Users/michael/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export GOPATH="/Users/michael/go"
+export GOPATHBIN="/Users/michael/go/bin"
+export PATH=$GOPATHBIN:$PATH
+
+# export python path
+export PATH=/usr/local/bin/python3.6:$PATH
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^kl' edit-command-line
+bindkey '^k^l' edit-command-line
+
+#source ~/.config/kubectl/completion.zsh
+
+# Vi style:
+# zle -N edit-command-line
+# bindkey -M vicmd v edit-command-line
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#export NVM_DIR="$HOME/.nvm"
+#  . "/usr/local/opt/nvm/nvm.sh"
+
+# nnn
+export VISUAL=vim
+export EDITOR=$VISUAL
+export NNN_NO_AUTOSELECT=1
+export NNN_USE_EDITOR=1
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# export homebrew dir first
+export PATH=/usr/local/bin:$PATH
+
+# deno
+export DENO_INSTALL="/Users/michael/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$PATH:$HOME/dev/zk/bin
+export ZK_PATH="$HOME/dev/Zettelkasten"
+
+export FZF_DEFAULT_OPTS="--height=40% --multi --tiebreak=begin \
+  --bind 'ctrl-y:execute-silent(echo {} | pbcopy)' \
+  --bind 'alt-down:preview-down,alt-up:preview-up' \
+  --bind \"ctrl-v:execute-silent[ \
+    tmux send-keys -t \{left\} Escape :vs Space && \
+    tmux send-keys -t \{left\} -l {} && \
+    tmux send-keys -t \{left\} Enter \
+  ]\"
+  --bind \"ctrl-x:execute-silent[ \
+    tmux send-keys -t \{left\} Escape :sp Space && \
+    tmux send-keys -t \{left\} -l {} && \
+    tmux send-keys -t \{left\} Enter \
+  ]\"
+  --bind \"ctrl-o:execute-silent[ \
+    tmux send-keys -t \{left\} Escape :read Space ! Space echo Space && \
+    tmux send-keys -t \{left\} -l \\\"{}\\\" && \
+    tmux send-keys -t \{left\} Enter \
+  ]\""
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/michael/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/michael/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/michael/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/michael/google-cloud-sdk/completion.zsh.inc'; fi
+
+nvm use 16
