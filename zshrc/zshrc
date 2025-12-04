@@ -1,5 +1,3 @@
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/michael/.oh-my-zsh"
 
@@ -377,22 +375,6 @@ if [ -f '/Users/michael/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Use
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/michael/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/michael/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-birrdi() {
-  # Save the current directory
-  CURRENT_DIR=$(pwd)
-
-  # Change to the desired directory and run mmake
-  pushd /Users/michael/go/src/gitlab.com/birrdi/birrdi-dev-tools > /dev/null
-
-  # Run mmake with the arguments
-  /usr/bin/env mmake "$@"
-
-  # Return to the original directory
-  popd > /dev/null
-}
-
-. "$HOME/.local/bin/env"
 
 export PATH="$HOME/.local/bin:$PATH"
 
