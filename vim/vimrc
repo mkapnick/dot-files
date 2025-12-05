@@ -11,11 +11,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'marijnh/tern_for_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'elzr/vim-json'
 Plug 'dyng/ctrlsf.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
