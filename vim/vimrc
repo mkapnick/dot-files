@@ -37,6 +37,7 @@ Plug 'machakann/vim-swap'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'mcchrish/nnn.vim'
+Plug 'habamax/vim-godot'
 call plug#end()
 
 call vundle#begin()
@@ -115,6 +116,10 @@ let g:ale_virtualtext_cursor = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 
+" Enable ALE auto completion globally
+let g:ale_completion_enabled = 1
+" Allow ALE to autoimport completion entries from LSP servers
+let g:ale_completion_autoimport = 1
 
 "go YCM
 let g:ycm_server_keep_logfiles = 1
@@ -233,6 +238,10 @@ function! ZettelkastenSetup()
         \ }))
   imap <buffer> # <plug>(fzf-complete-tags)
 endfunction
+
+" Accept YouCompleteMe completion with Tab
+inoremap <expr> <Tab>   pumvisible() ? "\<C-y>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<BS>"
 
 command! ProseMode call ProseMode()
 nmap \p :ProseMode<CR>
