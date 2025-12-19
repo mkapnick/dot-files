@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+"set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
@@ -91,6 +91,22 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:vim_json_syntax_conceal = 0
 let g:ycm_log_level = 'debug'
 let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
+
+"[start] netrw configuration
+
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+
+augroup NetrwOnStartup
+  autocmd!
+  autocmd VimEnter * if argc() == 0 | silent! Lexplore | wincmd p | endif
+augroup END
+
+nnoremap ` <C-w>p
+nnoremap q :close<CR>
+
+"[end] netrw configuration
 
 autocmd BufNewFile,BufRead *.jade set syntax=pug
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript.jsx
